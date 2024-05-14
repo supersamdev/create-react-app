@@ -40,7 +40,108 @@ Instead, it will copy all the configuration files and the transitive dependencie
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
+### Project Approach Document
+The goal of this project is to create a responsive and user-friendly dashboard using React and Chart.js. The dashboard will display data using at least three different types of charts. The design will be clean and optimized for both desktop and mobile devices.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 1. Initial Setup
+* **Create React App**: Start by initializing a new React project using Create React App for a simple setup.
+    ```
+    npx create-react-app dashboard-project
+    ```
+* **Install Dependencies**: Install necessary libraries, including Chart.js and its React wrapper (react-chartjs-2).
+    ```
+    npm install chart.js react-chartjs-2
+    ```
+### 2. Project Structure
+Organize the project files into the following structure:
+```
+/src
+  /components
+    /chartcomponent1
+        ChartComponent1.tsx
+        ChartComponent1.css
+    /chartcomponent2
+        ChartComponent2.tsx
+        ChartComponent2.css
+    /chartcomponent3
+        ChartComponent3.tsx
+        ChartComponent3.css
+    /main
+        Main.tsx
+        Main.css
+    /navbar
+        Navbar.tsx
+        Navbar.css
+  App.tsx
+  index.tsx
+  index.css
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+### 3. Designing the Dashboard Layout
+* Here's what App.tsx looks like:
+    ```
+    const App = () =>  {
+    return (
+        <div className="container-fluid">
+            <Navbar />
+            <Main/>
+        </div>
+    );
+    };
+
+    export default App;
+    ```
+* And here's what Main.tsx will look like:
+    ```
+    const Main = () => {
+        return(
+            <main>
+                <div className="main__container">
+                    
+                    <div className="main__title">
+                        ...
+                    </div>
+
+                    <div className="main__cards">
+                        ...
+                    </div>
+
+                    <div className="charts">
+                        <div className="charts__left">
+                            <div className="charts__left__title">
+                                ...
+                            </div>
+                            <ChartComponent1 />
+                        </div>
+
+                        <div className="charts__right">
+                            <div className="charts__right__title">
+                                ...
+                            </div>
+
+                            <div className="charts__right__cards">
+                                <div className="card2">
+                                    <ChartComponent2 />
+                                </div>
+
+                                <div className="card2">
+                                    <ChartComponent3 />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        )
+    }
+    ```
+
+
+### 4. Deploy on Vercel
+* Push the code to a GitHub repository.
+
+    `https://github.com/supersamdev/create-react-app`
+* Connect the repository to Vercel.
+* Deploy the application and share the live demo link.
+
+    `https://create-react-app-sigma-ruby.vercel.app/`
